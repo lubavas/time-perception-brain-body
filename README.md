@@ -43,5 +43,9 @@ Please contact the author if you are interested in collaboration.
 ├─ notebooks/
 ├─ src/
 ├─ data/            # not tracked in git
+│  ├─ raw/               # raw data
+│  │  └─ beh/            # raw behavioral data (PsychoPy)
+│  ├─ processed/         # preprocessed data
+│  │  └─ beh/            # preprocessed behavioral data
 ├─ README.md
 └─ requirements.txt
