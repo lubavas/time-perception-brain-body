@@ -1,5 +1,6 @@
 # time-perception-brain-body
 Tools and analysis code for a multimodal physiology study in teenagers, combining EEG, ECG, PPG, breathing, and behavioral data to investigate connection between time perception, external stumuli, and bodily states.
+
 ---
 
 ## Project Overview
@@ -41,11 +42,35 @@ Please contact the author if you are interested in collaboration.
 ```text
 .
 ├─ notebooks/
-├─ src/
+├─ src/             # Python modules
+|  ├─ parsing/      # codes for data import
+│  ├─ processing/   # codes for data preprocessing
+│  └─ plotting/     # for plotting
 ├─ data/            # not tracked in git
-│  ├─ raw/               # raw data
-│  │  └─ beh/            # raw behavioral data (PsychoPy)
-│  ├─ processed/         # preprocessed data
-│  │  └─ beh/            # preprocessed behavioral data
+│  ├─ raw/
+│  │  └─ beh/       # raw behavioral data (PsychoPy)
+        
+│  ├─ parsed/
+│  │  └─ beh/       # parsed behavioral data
+│  └─ preprosessed/
+│     └─ beh/       # preprosessed behavioral data
 ├─ README.md
 └─ requirements.txt
+```
+
+## Batch parsing PsychoPy behavioral logs
+
+Run the batch helper to convert all `.log` / `.log.gz` files to CSVs:
+
+**From Python**
+```python
+import batch_parse_psychopy as bp
+
+results = bp.batch_parse_logs(
+    input_dir="data/raw/beh",
+    output_dir="data/parsed/beh",
+    pattern="*.log*",
+    overwrite=False,
+)
+bp._print_summary(results)  # or inspect results list directly
+```
