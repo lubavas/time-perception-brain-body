@@ -41,22 +41,29 @@ Please contact the author if you are interested in collaboration.
 
 ```text
 .
-├─ notebooks/
-├─ src/             # Python modules
-|  ├─ parsing/      # codes for data import
-│  ├─ processing/   # codes for data preprocessing
-│  └─ plotting/     # for plotting
-├─ data/            # not tracked in git
-│  ├─ raw/
-│  │  └─ beh/       # raw behavioral data (PsychoPy)
-        
-│  ├─ parsed/
-│  │  └─ beh/       # parsed behavioral data
-│  └─ preprosessed/
-│     └─ beh/       # preprosessed behavioral data
-├─ README.md
-└─ requirements.txt
-```
+|-- notebooks/
+|-- src/                 # Python modules
+|   |-- parsing/         # codes for data import
+|   |-- processing/      # codes for data preprocessing
+|   -- plotting/        # for plotting
+|-- data/                # not tracked in git
+|   |-- raw/
+|   |   |-- beh/         # raw behavioral data (PsychoPy)
+|   |   -- eeg-edf/      # EEG data in EDF
+|   |       |-- 1star/
+|   |       |-- 2min1/
+|   |       |-- 2min2/
+|   |       |-- 3video/
+|   |       |-- 4star/
+|   |       |-- 5min1/
+|   |       -- 5min2/
+|   -- parsed/
+|       |-- beh/
+|       -- beh_orig/
+|-- experiment_archives/ # task scenarios (not tracked in git)
+|-- README.md
+-- requirements.txt
+`
 
 ## Batch parsing PsychoPy behavioral logs
 
